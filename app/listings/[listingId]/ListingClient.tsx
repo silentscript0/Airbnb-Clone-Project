@@ -1,5 +1,6 @@
 'use client';
 
+import axios from 'axios';
 import Container from '@/app/components/Container';
 import ListingHead from '@/app/components/listings/ListingHead';
 import ListingInfo from '@/app/components/listings/ListingInfo';
@@ -7,7 +8,6 @@ import ListingReservation from '@/app/components/listings/ListingReservation';
 import { categories } from '@/app/components/navbar/Categories';
 import useLoginModal from '@/app/hooks/useLoginModal';
 import { SafeListing, SafeReservation, SafeUser } from '@/app/types';
-import axios from 'axios';
 import { differenceInCalendarDays, eachDayOfInterval } from 'date-fns';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
@@ -58,8 +58,7 @@ const ListingClient: React.FC<ListingClientProps> = ({ reservations = [], listin
 
     setIsLoading(true);
 
-    axios
-      .post('/api/reservations', {
+    axios.post('/api/reservations/', {
         totalPrice,
         startDate: dateRange.startDate,
         endDate: dateRange.endDate,
@@ -69,6 +68,7 @@ const ListingClient: React.FC<ListingClientProps> = ({ reservations = [], listin
         toast.success('Listing reserved!');
         setDateRange(initialDateRange);
         router.push('/trips');
+      
       })
       .catch(() => {
         toast.error('Something went wrong.');
