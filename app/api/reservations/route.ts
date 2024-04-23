@@ -2,9 +2,7 @@ import { NextResponse } from 'next/server';
 import getCurrentUser from '@/app/actions/getCurrentUser';
 import prisma from '../../libs/prismadb';
 
-export async function POST(
-    request: Request
-    ){
+export async function POST(request: Request){
   const currentUser = await getCurrentUser();
 
   if (!currentUser) {
@@ -35,3 +33,4 @@ export async function POST(
 
   return NextResponse.json(listingAndReservation);
 };
+

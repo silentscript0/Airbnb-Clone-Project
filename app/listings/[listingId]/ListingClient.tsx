@@ -14,6 +14,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Range } from 'react-date-range';
 import toast from 'react-hot-toast';
 
+
 const initialDateRange = {
   startDate: new Date(),
   endDate: new Date(),
@@ -21,11 +22,12 @@ const initialDateRange = {
 };
 
 interface ListingClientProps {
-  reservations?: SafeReservation[];
   listing: SafeListing & {
     user: SafeUser;
+    reservations?: SafeReservation[];
   };
   currentUser?: SafeUser | null;
+ 
 }
 
 const ListingClient: React.FC<ListingClientProps> = ({ reservations = [], listing, currentUser }) => {
@@ -65,7 +67,7 @@ const ListingClient: React.FC<ListingClientProps> = ({ reservations = [], listin
         listingId: listing?.id,
       })
       .then(() => {
-        toast.success('Listing reserved!');
+        toast.success('Reservation created');
         setDateRange(initialDateRange);
         router.push('/trips');
       
@@ -133,4 +135,7 @@ const ListingClient: React.FC<ListingClientProps> = ({ reservations = [], listin
   );
 };
 
-export default ListingClient;
+export default ListingClient; 
+
+
+
