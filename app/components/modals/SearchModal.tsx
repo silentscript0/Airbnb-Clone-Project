@@ -9,9 +9,9 @@ import { useCallback, useMemo, useState } from "react";
 import { Range } from "react-date-range";
 
 import Heading from "../Heading";
-import Calendar from "../inputs/Calendar";
-import Counter from "../inputs/Counter";
-import CountrySelect, { CountrySelectValue } from "../inputs/CountrySelect";
+import Calendar from "../Inputs/Calendar";
+import Counter from "../Inputs/Counter";
+import CountrySelect, { CountrySelectValue } from "../Inputs/CountrySelect";
 import Modal from "./Modal";
 
 enum STEPS {

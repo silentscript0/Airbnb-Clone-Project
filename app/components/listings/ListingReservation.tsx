@@ -1,7 +1,7 @@
 'use client';
 
 import { Range } from 'react-date-range';
-import Calendar from '@/app/components/inputs/Calendar';
+import Calendar from '@/app/components/Inputs/Calendar';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 import Button from '../Button';
