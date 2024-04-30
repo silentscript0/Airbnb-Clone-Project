@@ -11,7 +11,10 @@ interface CalendarProps {
   disabledDates?: Date[];
 }
 
-const Calendar: React.FC<CalendarProps> = ({ value, onChange, disabledDates }) => {
+const Calendar: React.FC<CalendarProps> = ({ 
+  value, 
+  onChange, 
+  disabledDates }) => {
   return (
     <DateRange
       rangeColors={['#262626']}
