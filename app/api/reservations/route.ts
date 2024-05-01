@@ -25,7 +25,7 @@ export async function POST(request: Request){
           userId: currentUser.id,
           startDate,
           endDate,
-          totalPrice,
+          totalPrice
         },
       },
     },
