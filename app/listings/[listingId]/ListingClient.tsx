@@ -13,7 +13,7 @@ import { useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Range } from 'react-date-range';
 import {toast} from 'react-hot-toast';
-import { Reservation } from "@prisma/client";
+//import { Reservation } from "@prisma/client";
 
 
 const initialDateRange = {
@@ -73,6 +73,7 @@ const ListingClient: React.FC<ListingClientProps> = ({ reservations = [], listin
         toast.success('Reservation created');
         setDateRange(initialDateRange);
         router.push('/trips');
+        //router.refresh();
 
       })
       .catch(() => {

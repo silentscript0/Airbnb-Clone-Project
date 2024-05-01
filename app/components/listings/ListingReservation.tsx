@@ -24,6 +24,7 @@ const ListingReservation: React.FC<ListingReservationProps> = ({
   onSubmit,
   disabled,
   disabledDates,
+
 }) => {
   return (
     <div className="bg-white rounded-xl border-[1px] border-neutral-200 overflow-hidden">

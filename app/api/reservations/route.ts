@@ -25,10 +25,11 @@ export async function POST(request: Request){
           userId: currentUser.id,
           startDate,
           endDate,
-          totalPrice
-        },
-      },
-    },
+          totalPrice, 
+          createdAt: new Date()
+        }
+      }
+    }
   });
 
   return NextResponse.json(listingAndReservation);
