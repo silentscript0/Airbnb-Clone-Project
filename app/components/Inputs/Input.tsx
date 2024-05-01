@@ -16,7 +16,7 @@ interface InputProps {
     formatPrice?: boolean;
     required?: boolean;
     register: UseFormRegister<FieldValues>,
-    erros: FieldErrors
+    errors: FieldErrors
 }
 
 
